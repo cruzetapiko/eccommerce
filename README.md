@@ -1,3 +1,7 @@
+## Tutorial for this repo
+
+https://www.youtube.com/watch?v=_IBlyR5mRzA&t=1945s.
+
 ## Extensions needed
 
 Prettier.
