@@ -1,3 +1,11 @@
+import Link from 'next/link';
+
 export default function Home() {
-  return <h1 className="text-center underline">hola hombre</h1>;
+  return (
+    <div className="bg-slate-500">
+      <h1 className="text-center underline">
+        Welcome to <Link href="/posts/first-post">first_link</Link>
+      </h1>
+    </div>
+  );
 }
