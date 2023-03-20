@@ -1,12 +1,12 @@
 ## Tutorial for this repo
 
-https://www.youtube.com/watch?v=_IBlyR5mRzA&t=1945s.
+https://www.youtube.com/watch?v=_IBlyR5mRzA&t=1945s
 
 ## Extensions needed
 
 Prettier.
 
-ES7+ React/Redux/React-Native snippets.
+ES7+ React/Redux/React-Native snippets
 
 ## Install Tailwind framework
 
