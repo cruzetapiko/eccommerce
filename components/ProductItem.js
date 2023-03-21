@@ -10,7 +10,7 @@ export default function ProductItem({ product }) {
           src={product.image}
           alt={product.name}
           className="rounded shadow object-cover h-auto w-full"
-          width={100}
+          width={1000}
           height={100}
           priority
         />

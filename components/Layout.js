@@ -25,9 +25,7 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-        <body className="bg-slate-300">
           <main className="container m-auto mt-4 px-4 ">{children}</main>
-        </body>
         <footer className="flex h-10 justify-center items-center shadow-inner ">
           footer
         </footer>
