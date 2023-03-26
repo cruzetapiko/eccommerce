@@ -5,7 +5,7 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + '-hola' : 'Amazona'}</title>
+        <title>{title ? title + '-Amazona' : 'Amazona'}</title>
         <meta name="description" content="Home page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -25,7 +25,7 @@ export default function Layout({ title, children }) {
             </div>
           </nav>
         </header>
-          <main className="container m-auto mt-4 px-4 ">{children}</main>
+        <main className="container m-auto mt-4 px-4 ">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner ">
           footer
         </footer>
