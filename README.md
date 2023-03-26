@@ -8,6 +8,8 @@ Prettier.
 
 ES7+ React/Redux/React-Native snippets
 
+heroicon: npm install @heroicons/react
+
 ## Install Tailwind framework
 
 https://tailwindcss.com/docs/guides/nextjs

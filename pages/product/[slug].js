@@ -19,7 +19,12 @@ export default function ProductScreen() {
 
   const addToCartHandler = () => {
     const existItem = state.cart.cartItems.find((x) => x.slug === slug);
-    const quantity = existItem ? existItem.quantity + 20 : 1;
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+
+    if (quantity > product.countInStock) {
+      window.alert('Sorry. Product is out of stock');
+      return;
+    }
 
     dispatch({
       type: 'ADD_TO_CART',
