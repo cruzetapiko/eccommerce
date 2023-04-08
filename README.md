@@ -10,6 +10,8 @@ ES7+ React/Redux/React-Native snippets
 
 heroicon: npm install @heroicons/react
 
+install js-cookie: npm i js-cookie
+
 ## Install Tailwind framework
 
 https://tailwindcss.com/docs/guides/nextjs
