@@ -33,7 +33,7 @@ export default function Layout({ title, children }) {
                   </span>
                 )}
               </Link>
-              <Link className="p-2" href="/signin">
+              <Link className="p-2" href="/login">
                 Login
               </Link>
             </div>
