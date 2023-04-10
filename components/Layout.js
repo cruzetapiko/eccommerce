@@ -2,8 +2,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { use, useContext, useState, useEffect } from 'react';
 import { Store } from '../utils/Store';
+import { ToastContainer } from 'react-toastify';
+import { useSession } from 'next-auth/react';
 
 export default function Layout({ title, children }) {
+  const { data: session, status } = useSession();
+
   const [cartItemsCount, setcartItemsCount] = useState(0);
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
@@ -18,6 +22,9 @@ export default function Layout({ title, children }) {
         <meta name="description" content="Home page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <ToastContainer position="botton-center" limit={1} />
+
       <div className="flex min-h-screen flex-col justify-between">
         <header>
           <nav className=" flex h-12 items-center px-4 justify-between shadow-md">
@@ -33,13 +40,19 @@ export default function Layout({ title, children }) {
                   </span>
                 )}
               </Link>
-              <Link className="p-2" href="/login">
-                Login
-              </Link>
+              {status === 'loading' ? (
+                'Loading...'
+              ) : session?.user ? (
+                session.user.name
+              ) : (
+                <Link className="p-2" href="/login">
+                  Login
+                </Link>
+              )}
             </div>
           </nav>
         </header>
-        <main className="container m-auto mt-4 px-4 ">{children}</main>
+        <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner ">
           footer
         </footer>

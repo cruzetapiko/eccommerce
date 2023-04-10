@@ -12,7 +12,23 @@ heroicon: npm install @heroicons/react
 
 install js-cookie: npm i js-cookie
 
+react-hook-form is used for from validation
+
+npm i bcryptjs for encripting passwords
+
 ## Install Tailwind framework
+
+## Authentication
+
+Install next-auth
+
+npm i react-toastify
+
+create nextauth.js
+
+implement signin
+
+use signing in login form
 
 https://tailwindcss.com/docs/guides/nextjs
 
