@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { use, useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Store } from '../utils/Store';
 import { ToastContainer } from 'react-toastify';
-import { useSession } from 'next-auth/react';
+import 'react-toastify/dist/ReactToastify.css';
+import { signOut, useSession } from 'next-auth/react';
 
 export default function Layout({ title, children }) {
-  const { data: session, status } = useSession();
+  const { status, data: session } = useSession();
 
   const [cartItemsCount, setcartItemsCount] = useState(0);
   const { state, dispatch } = useContext(Store);
@@ -14,6 +15,10 @@ export default function Layout({ title, children }) {
   useEffect(() => {
     setcartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
+
+  {
+    console.log(session);
+  }
 
   return (
     <>
@@ -23,7 +28,7 @@ export default function Layout({ title, children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ToastContainer position="botton-center" limit={1} />
+      <ToastContainer position="bottom-center" limit={1} />
 
       <div className="flex min-h-screen flex-col justify-between">
         <header>
@@ -43,11 +48,14 @@ export default function Layout({ title, children }) {
               {status === 'loading' ? (
                 'Loading...'
               ) : session?.user ? (
-                session.user.name
+                <div>
+                  {session.user.name} &nbsp;
+                  <button className="text-red-500" onClick={() => signOut()}>
+                    sign Out
+                  </button>
+                </div>
               ) : (
-                <Link className="p-2" href="/login">
-                  Login
-                </Link>
+                <Link href="/login">Sign In</Link>
               )}
             </div>
           </nav>

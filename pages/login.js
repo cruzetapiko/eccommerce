@@ -8,7 +8,7 @@ import { getError } from '@/utils/error';
 import { toast } from 'react-toastify';
 
 export default function LoginScreen() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   const router = useRouter();
   const { redirect } = router.query;
@@ -17,7 +17,7 @@ export default function LoginScreen() {
     if (session?.user) {
       router.push(redirect || '/');
     }
-  }, [session, router, redirect]);
+  }, [router, session, redirect]);
 
   const {
     register,
@@ -35,7 +35,7 @@ export default function LoginScreen() {
       if (result.error) {
         toast.error(result.error);
       }
-    } catch (error) {
+    } catch (err) {
       toast.error(getError(err));
     }
   };
